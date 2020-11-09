@@ -1,13 +1,13 @@
 {
-	"name": "ts-tmpl",
+	"name": "album-player",
 	"version": "0.0.1-prealpha",
-	"description": "basic template repo for typescript projects",
+	"description": "an audio tracks player react component using the HTML 5 audio api ",
 	"main": "./dist/index.js",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/sugatpoudel/ts-tmpl.git"
+		"url": "https://github.com/groupbool/album-player.git"
 	},
-	"author": "sugatpoudel",
+	"author": "groupbool",
 	"license": "MIT",
 	"files": [
 		"dist/**/*"
@@ -22,10 +22,13 @@
 	"dependencies": {},
 	"devDependencies": {
 		"@types/jest": "^26.0.9",
+		"@types/react": "^16.9.56",
 		"@typescript-eslint/eslint-plugin": "^3.8.0",
 		"@typescript-eslint/parser": "^3.8.0",
 		"eslint": "^7.6.0",
 		"jest": "^26.2.2",
+		"react": "^17.0.1",
+		"react-dom": "^17.0.1",
 		"ts-jest": "^26.1.4",
 		"ts-loader": "^8.0.7",
 		"typescript": "^4.0.3",
