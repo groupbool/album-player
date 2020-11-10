@@ -1,1 +1,3 @@
-console.log('hello world');
+import AlbumPlayer from './AlbumPlayer';
+
+export default AlbumPlayer;

@@ -43,9 +43,10 @@ export default class AudioPlayer {
 	 * Asynchronously loads the audio file as an array buffer
 	 * @param url The audio source url
 	 */
-	private load(url: string) : Promise<ArrayBuffer | undefined> {
+	private async load(url: string) : Promise<ArrayBuffer> {
 		if (this.cache.has(url)) {
-			return Promise.resolve(this.cache.get(url));
+			const buf = this.cache.get(url) as ArrayBuffer;
+			return buf;
 		}
 		return fetch(url)
 			.then(res => res.arrayBuffer())

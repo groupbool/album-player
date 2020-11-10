@@ -1,5 +1,6 @@
 /* eslint-disable */
 
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const path = require('path');
 
 module.exports = {
@@ -19,6 +20,9 @@ module.exports = {
 			}
 		],
 	},
+	plugins: [
+		new CleanWebpackPlugin(),
+	],
 	resolve: {
 		extensions: ['.tsx', '.ts', '.jsx', '.js'],
 	},
