@@ -31,12 +31,12 @@ describe('rendering AlbumPlayer', () => {
 		expect(player).toMatchSnapshot();
 	});
 
-	// FIXME: all classes are dynamic -- how to test this?
-	// it('changes the current track on click', () => {
-	// 	const player = mount(<AlbumPlayer {...mixtape} />);
-	// 	const tracks = player.find('li');
-	// 	tracks.at(1).simulate('click');
-	// 	const current = player.find('.selected-info').text();
-	// 	expect(current).toEqual('Trussmidaddi');
-	// });
+	it('changes the current track on click', () => {
+		const player = mount(<AlbumPlayer {...mixtape} />);
+		const tracks = player.find('li');
+		tracks.at(1).simulate('click');
+		const current = player.find({'data-tid': 'current-track'});
+		expect(current.length).toBeGreaterThan(1);
+		expect(current.at(0).text()).toEqual('Trussmidaddi');
+	});
 });
