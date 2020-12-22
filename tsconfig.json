@@ -10,6 +10,12 @@
         "jsx": "react",
         "outDir": "dist"
 	},
-	"include": ["src/**/*.ts", "enzyme.config.ts"],
-	"exclude": ["node_modules", "**/*.spec.ts", "**/*.test.ts"]
+	"include": ["src/**/*.ts", "src/**/*.tsx"],
+	"exclude": [
+        "node_modules",
+        "**/*.spec.ts",
+        "**/*.test.ts",
+        "**/*.test.tsx",
+        "src/enzyme.config.ts",
+    ]
 }

@@ -1,3 +1,3 @@
-import AlbumPlayer from './AlbumPlayer';
+import AlbumPlayer from './components/AlbumPlayer';
 
 export default AlbumPlayer;

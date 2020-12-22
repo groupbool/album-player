@@ -1,8 +1,8 @@
 import React from 'react';
-import classNames from 'classnames';
+import styled from 'styled-components'
 
-import { Play, Pause, Spinner } from './utils/icons';
-import AudioPlayer from './audioplayer';
+import { Play, Pause, Spinner } from './icons';
+import AudioPlayer from '../utils/audioplayer';
 
 interface Track {
 	index: number;
@@ -14,6 +14,7 @@ interface AlbumPlayerProps {
 	cover: string;
 	title: string;
 	tracks: Track[];
+	className?: string;
 }
 
 interface AlbumPlayerState {
@@ -22,6 +23,33 @@ interface AlbumPlayerState {
 	busy: boolean;
 	progress: number;
 }
+
+const AlbumPlayerContainer = styled.div`
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	background-color: #ecf0f1;
+`;
+
+const AlbumCoverContainer = styled.div`
+	position: relative;
+`;
+
+const AlbumCoverImage = styled.img`
+    display: block;
+    width: 100%;
+	height: auto;
+`;
+
+const AlbumControlsContainer = styled.div`
+	position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+`;
 
 /**
  * Showcases an album art and lists all available track. Tracks
@@ -109,12 +137,12 @@ export default class AlbumPlayer extends React.PureComponent<AlbumPlayerProps, A
 
 	render(): React.ReactNode {
 		const { index, progress, playing, busy } = this.state;
-		const { cover, title, tracks, } = this.props;
+		const { cover, title, tracks, className } = this.props;
 		const current = tracks[index];
 		return (
-			<div className="album">
-				<div className="album-cover-container">
-					<div className="album-controls-container">
+			<AlbumPlayerContainer className={className}>
+				<AlbumCoverContainer>
+					<AlbumControlsContainer>
 						<TrackControls
 							progress={progress}
 							track={current}
@@ -122,15 +150,15 @@ export default class AlbumPlayer extends React.PureComponent<AlbumPlayerProps, A
 							busy={busy}
 							onToggle={() => this.handleControl(current.url)}
 						/>
-					</div>
-					<img className="album-cover-img" src={cover} alt={title} />
-				</div>
+					</AlbumControlsContainer>
+					<AlbumCoverImage src={cover} alt={title} />
+				</AlbumCoverContainer>
 				<TrackList
 					tracks={tracks}
 					selected={index}
 					onSelect={this.handleTrackSelect}
 				/>
-			</div>
+			</AlbumPlayerContainer>
 		);
 	}
 }
@@ -144,19 +172,29 @@ interface ToggleButtonProps {
 	onToggle: () => void;
 }
 
+const Loading = styled.div`
+	height: 1.5em;
+    width: 1.5em;
+`;
+
+const ButtonContainer = styled.i`
+	display: flex;
+	align-items: center;
+`;
+
 function ToggleButton(props: ToggleButtonProps): JSX.Element {
 	const { playing, busy } = props;
 	if (busy) {
 		return (
-			<div className="media-controls-loading">
+			<Loading>
 				<Spinner />
-			</div>
+			</Loading>
 		);
 	}
 	return (
-		<i className="btn-control-container" onClick={props.onToggle}>
-			{playing ? <Pause className="btn-control" /> : <Play className="btn-control" />}
-		</i>
+		<ButtonContainer onClick={props.onToggle}>
+			{playing ? <Pause/> : <Play/>}
+		</ButtonContainer>
 	);
 }
 
@@ -170,27 +208,59 @@ interface TrackControlsProps {
 	onToggle: () => void;
 }
 
+const TrackControlsContainer = styled.div`
+    background-color: rgba(52,73,94,.5);
+    width: 100%;
+    padding: 1em;
+`;
+
+const TrackControlsCurrent = styled.div`
+    color: white;
+	font-style: italic;
+	height: 1.2em;
+	font-size: 0.9em;
+`;
+
+const TrackMediaControls = styled.div`
+	width: 100%;
+	margin-top: 0.5em;
+	display: flex;
+	align-items: center;
+`;
+
+const TrackProgress = styled.div`
+	background-color: white;
+    height: 0.5em;
+    flex-grow: 1;
+    margin-left: 0.5em;
+`;
+
+const TrackCurrentProgress = styled.span<{progress: number}>`
+	display: block;
+	transition: 0.5s width;
+	background-color: #b3b3b3;
+	height: 0.5em;
+	width: ${props => props.progress}%;
+`;
+
 function TrackControls(props: TrackControlsProps): JSX.Element {
 	const { progress, track } = props;
 	return (
-		<div className="album-controls">
-			<div className="selected-info">
+		<TrackControlsContainer>
+			<TrackControlsCurrent>
 				{track.name}
-			</div>
-			<div className="media-controls">
+			</TrackControlsCurrent>
+			<TrackMediaControls>
 				<ToggleButton
 					playing={props.playing}
 					busy={props.busy}
 					onToggle={props.onToggle}
 				/>
-				<span className="track-progress">
-					<span
-						className="track-progress-current"
-						style={{ width: `${progress}%` }}
-					/>
-				</span>
-			</div>
-		</div>
+				<TrackProgress>
+					<TrackCurrentProgress progress={progress}/>
+				</TrackProgress>
+			</TrackMediaControls>
+		</TrackControlsContainer>
 	);
 }
 
@@ -202,25 +272,40 @@ interface TrackListProps {
 	onSelect: (index: number) => void;
 }
 
+const TrackListContainer = styled.ol`
+	margin: 1em 0;
+	padding: 0;
+	list-style: none;
+`;
+
+const TrackListItem = styled.li<{selected: boolean}>`
+	padding: 0.7em 1em;
+	color: ${props => props.selected ? '#C86ED3' : 'inherit'};
+	&:hover {
+		cursor: pointer;
+      	background-color: #dfe7e9;
+	}
+`;
+
+const TrackIndex = styled.span`
+	margin-right: 0.5em;
+`;
+
 function TrackList(props: TrackListProps): JSX.Element {
 	const { selected, tracks } = props;
 	return (
-		<ol className="tracks">
+		<TrackListContainer>
 			{tracks.map((track: Track, i: number) => {
-				const trackClassName = classNames({
-					'track': true,
-					'track-selected': i == selected,
-				});
 				return (
-					<li
+					<TrackListItem
 						key={track.index}
-						className={trackClassName}
+						selected={i == selected}
 						onClick={() => props.onSelect(i)}
 					>
-						<span className="track-number">{i + 1}</span> {track.name}
-					</li>
+						<TrackIndex>{i + 1}</TrackIndex> {track.name}
+					</TrackListItem>
 				);
 			})}
-		</ol>
+		</TrackListContainer>
 	);
 }
