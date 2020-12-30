@@ -7,7 +7,7 @@ import AudioPlayer from '../utils/audioplayer';
 import TrackList from './TrackList';
 import TrackControls from './TrackControls';
 
-interface AlbumPlayerProps {
+export interface AlbumPlayerProps {
 	cover: string;
 	title: string;
 	tracks: Track[];

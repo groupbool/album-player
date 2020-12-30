@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import AlbumPlayer, { Theme } from '../index';
-import { ThemeProvider } from 'styled-components';
+import AlbumPlayer from '../index';
 
 const album = {
 	cover: "https://storage.googleapis.com/gb-albums/jadedAtTwentyTwo/cover.jpeg",
@@ -48,9 +47,7 @@ const album = {
 document.addEventListener('DOMContentLoaded', () => {
 	const [root] = document.getElementsByClassName('react-root');
 	ReactDOM.render(
-		<ThemeProvider theme={Theme}>
-			<AlbumPlayer {...album}/>
-		</ThemeProvider>,
+		<AlbumPlayer {...album}/>,
 		root
 	);
 });

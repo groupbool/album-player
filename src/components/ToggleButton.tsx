@@ -10,8 +10,8 @@ interface ToggleButtonProps {
 }
 
 const Loading = styled.div`
-	height: 1.5em;
-    width: 1.5em;
+	height: 24px;
+    width: 24px;
 `;
 
 const ButtonContainer = styled.i`
