@@ -14,5 +14,3 @@ export default function DefaultAlbumPlayer(props: AlbumPlayerProps) : JSX.Elemen
 		</ThemeProvider>
 	)
 }
-
-export { AlbumPlayer };
