@@ -10,6 +10,9 @@ module.exports = {
 	output: {
 		filename: '[name].js',
 		path: path.resolve(__dirname, 'dist'),
+		libraryTarget : 'umd',
+		library: 'AlbumPlayer',
+		umdNamedDefine: true,
 	},
 	module: {
 		rules: [

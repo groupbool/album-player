@@ -15,7 +15,7 @@ function DefaultAlbumPlayer(props: AlbumPlayerProps) : JSX.Element {
 	)
 }
 
+export default DefaultAlbumPlayer;
 export {
 	AlbumPlayer,
-	DefaultAlbumPlayer,
 }
