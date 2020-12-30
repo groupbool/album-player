@@ -1,3 +1,224 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`rendering AlbumPlayer renders album player as expected 1`] = `ShallowWrapper {}`;
+exports[`rendering AlbumPlayer renders album player as expected 1`] = `
+<Component
+  theme={
+    Object {
+      "base": "black",
+      "controls": Object {
+        "background": "rgba(52,73,94,.5)",
+        "base": "white",
+        "fill": "#ccc",
+        "hover": "#B3B3B3",
+      },
+      "font": "monospace",
+      "tracks": Object {
+        "active": "#C86ED3",
+        "hover": "#dfe7e9",
+      },
+    }
+  }
+>
+  <AlbumPlayer
+    artist="JPEGMAFIAxFreaky"
+    cover="https://f4.bcbits.com/img/a3659417884_16.jpg"
+    title="2nd amendment"
+    tracks={
+      Array [
+        Object {
+          "index": 0,
+          "name": "I Might Vote 4 Donald Trump",
+          "url": "https://jpegmafia.bandcamp.com/track/i-might-vote-4-donald-trump",
+        },
+        Object {
+          "index": 1,
+          "name": "Trussmidaddi",
+          "url": "https://jpegmafia.bandcamp.com/track/trussmidaddi",
+        },
+      ]
+    }
+  >
+    <styled.div>
+      <div
+        className="sc-crrsfI glheLf"
+      >
+        <styled.div>
+          <div
+            className="sc-dQppl cskZmc"
+          >
+            <styled.div>
+              <div
+                className="sc-kstrdz gQfiip"
+              >
+                <TrackControls
+                  busy={false}
+                  onToggle={[Function]}
+                  playing={false}
+                  progress={0}
+                  track={
+                    Object {
+                      "index": 0,
+                      "name": "I Might Vote 4 Donald Trump",
+                      "url": "https://jpegmafia.bandcamp.com/track/i-might-vote-4-donald-trump",
+                    }
+                  }
+                >
+                  <styled.div>
+                    <div
+                      className="sc-fubCfw dBEmrO"
+                    >
+                      <styled.div
+                        data-tid="current-track"
+                      >
+                        <div
+                          className="sc-pFZIQ laZcVH"
+                          data-tid="current-track"
+                        >
+                          I Might Vote 4 Donald Trump
+                        </div>
+                      </styled.div>
+                      <styled.div>
+                        <div
+                          className="sc-jrAGrp chBoMP"
+                        >
+                          <ToggleButton
+                            busy={false}
+                            onToggle={[Function]}
+                            playing={false}
+                          >
+                            <styled.i
+                              onClick={[Function]}
+                            >
+                              <i
+                                className="sc-iBPRYJ kMvjxY"
+                                onClick={[Function]}
+                              >
+                                <Play>
+                                  <styled.svg
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    width="24"
+                                  >
+                                    <svg
+                                      className="sc-hKgILt fxcHoP"
+                                      height="24"
+                                      viewBox="0 0 24 24"
+                                      width="24"
+                                    >
+                                      <path
+                                        d="M0 0h24v24H0z"
+                                        fill="none"
+                                      />
+                                      <path
+                                        d="M10 16.5l6-4.5-6-4.5v9zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
+                                      />
+                                    </svg>
+                                  </styled.svg>
+                                </Play>
+                              </i>
+                            </styled.i>
+                          </ToggleButton>
+                          <styled.div>
+                            <div
+                              className="sc-kEjbxe iisOsf"
+                            >
+                              <styled.span
+                                progress={0}
+                              >
+                                <span
+                                  className="sc-iqHYGH zuiwp"
+                                />
+                              </styled.span>
+                            </div>
+                          </styled.div>
+                        </div>
+                      </styled.div>
+                    </div>
+                  </styled.div>
+                </TrackControls>
+              </div>
+            </styled.div>
+            <styled.img
+              alt="2nd amendment"
+              src="https://f4.bcbits.com/img/a3659417884_16.jpg"
+            >
+              <img
+                alt="2nd amendment"
+                className="sc-bqyKva jBajkz"
+                src="https://f4.bcbits.com/img/a3659417884_16.jpg"
+              />
+            </styled.img>
+          </div>
+        </styled.div>
+        <TrackList
+          onSelect={[Function]}
+          selected={0}
+          tracks={
+            Array [
+              Object {
+                "index": 0,
+                "name": "I Might Vote 4 Donald Trump",
+                "url": "https://jpegmafia.bandcamp.com/track/i-might-vote-4-donald-trump",
+              },
+              Object {
+                "index": 1,
+                "name": "Trussmidaddi",
+                "url": "https://jpegmafia.bandcamp.com/track/trussmidaddi",
+              },
+            ]
+          }
+        >
+          <styled.ol>
+            <ol
+              className="sc-bdfBwQ ixPlzY"
+            >
+              <styled.li
+                key="0"
+                onClick={[Function]}
+                selected={true}
+              >
+                <li
+                  className="sc-gsTCUz cJBRwz"
+                  onClick={[Function]}
+                  selected={true}
+                >
+                  <styled.span>
+                    <span
+                      className="sc-dlfnbm gMYWRn"
+                    >
+                      1
+                    </span>
+                  </styled.span>
+                   
+                  I Might Vote 4 Donald Trump
+                </li>
+              </styled.li>
+              <styled.li
+                key="1"
+                onClick={[Function]}
+                selected={false}
+              >
+                <li
+                  className="sc-gsTCUz dWYFlo"
+                  onClick={[Function]}
+                  selected={false}
+                >
+                  <styled.span>
+                    <span
+                      className="sc-dlfnbm gMYWRn"
+                    >
+                      2
+                    </span>
+                  </styled.span>
+                   
+                  Trussmidaddi
+                </li>
+              </styled.li>
+            </ol>
+          </styled.ol>
+        </TrackList>
+      </div>
+    </styled.div>
+  </AlbumPlayer>
+</Component>
+`;

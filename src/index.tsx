@@ -1,21 +1,7 @@
 import React from 'react';
 import AlbumPlayer, { AlbumPlayerProps } from './components/AlbumPlayer';
-import { DefaultTheme, ThemeProvider } from 'styled-components';
-
-export const Theme: DefaultTheme = {
-	font: 'monospace',
-	base: 'black',
-	controls: {
-		base: 'white',
-		background: 'rgba(52,73,94,.5)',
-		hover: '#B3B3B3',
-		fill: '#ccc',
-	},
-	tracks: {
-		active: '#C86ED3',
-		hover: '#dfe7e9',
-	},
-};
+import { ThemeProvider } from 'styled-components';
+import { BoolTheme } from './themes';
 
 /**
  * An album player component that uses the default theme.
@@ -23,7 +9,7 @@ export const Theme: DefaultTheme = {
  */
 export default function DefaultAlbumPlayer(props: AlbumPlayerProps) : JSX.Element {
 	return (
-		<ThemeProvider theme={Theme}>
+		<ThemeProvider theme={BoolTheme}>
 			<AlbumPlayer {...props}/>
 		</ThemeProvider>
 	)

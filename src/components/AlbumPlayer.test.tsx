@@ -1,6 +1,8 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 import AlbumPlayer from './AlbumPlayer';
+import { ThemeProvider } from 'styled-components';
+import { BoolTheme } from '../themes';
 
 // mocking HtmlMediaElement
 window.HTMLMediaElement.prototype.load = () => { }; // eslint-disable-line
@@ -27,12 +29,20 @@ const mixtape = {
 
 describe('rendering AlbumPlayer', () => {
 	it('renders album player as expected', () => {
-		const player = shallow(<AlbumPlayer {...mixtape} />);
+		const player = mount(
+			<ThemeProvider theme={BoolTheme}>
+				<AlbumPlayer {...mixtape}/>
+			</ThemeProvider>
+		);
 		expect(player).toMatchSnapshot();
 	});
 
 	it('changes the current track on click', () => {
-		const player = mount(<AlbumPlayer {...mixtape} />);
+		const player = mount(
+			<ThemeProvider theme={BoolTheme}>
+				<AlbumPlayer {...mixtape}/>
+			</ThemeProvider>
+		);
 		const tracks = player.find('li');
 		tracks.at(1).simulate('click');
 		const current = player.find({'data-tid': 'current-track'});

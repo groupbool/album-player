@@ -1,7 +1,12 @@
 {
 	"name": "album-player",
 	"version": "0.0.1-prealpha",
-	"description": "an audio tracks player react component using the HTML 5 audio api ",
+	"description": "an audio tracks player react component using the HTML 5 audio api",
+	"keywords": [
+		"html5-audio-player",
+		"react-component",
+		"album-player"
+	],
 	"main": "./dist/index.js",
 	"repository": {
 		"type": "git",
@@ -37,6 +42,7 @@
 		"clean-webpack-plugin": "^3.0.0",
 		"enzyme": "^3.11.0",
 		"enzyme-adapter-react-16": "^1.15.5",
+		"enzyme-to-json": "^3.6.1",
 		"eslint": "^7.13.0",
 		"eslint-plugin-react": "^7.21.5",
 		"html-loader": "^1.3.2",
