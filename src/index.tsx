@@ -5,12 +5,17 @@ import { BoolTheme } from './themes';
 
 /**
  * An album player component that uses the default theme.
- * @param props 
+ * @param props The album player props
  */
-export default function DefaultAlbumPlayer(props: AlbumPlayerProps) : JSX.Element {
+function DefaultAlbumPlayer(props: AlbumPlayerProps) : JSX.Element {
 	return (
 		<ThemeProvider theme={BoolTheme}>
 			<AlbumPlayer {...props}/>
 		</ThemeProvider>
 	)
+}
+
+export {
+	AlbumPlayer,
+	DefaultAlbumPlayer,
 }

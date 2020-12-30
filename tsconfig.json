@@ -16,7 +16,7 @@
         "**/*.spec.ts",
         "**/*.test.ts",
         "**/*.test.tsx",
-        "devtest/**",
+        "src/devtest/**",
         "src/enzyme.config.ts",
     ]
 }

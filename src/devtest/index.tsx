@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import AlbumPlayer from '../index';
+import { DefaultAlbumPlayer as AlbumPlayer } from '../index';
 
 const album = {
 	cover: "https://storage.googleapis.com/gb-albums/jadedAtTwentyTwo/cover.jpeg",
