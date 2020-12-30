@@ -26,6 +26,7 @@ const AlbumPlayerContainer = styled.div`
 	display: flex;
 	flex-direction: column;
 	background-color: #ecf0f1;
+	font-family: ${props => props.theme.font};
 `;
 
 const AlbumCoverContainer = styled.div`

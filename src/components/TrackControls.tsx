@@ -13,13 +13,13 @@ interface TrackControlsProps {
 }
 
 const TrackControlsContainer = styled.div`
-    background-color: rgba(52,73,94,.5);
+	background-color: ${props => props.theme.controls.background};
     width: 100%;
     padding: 1em;
 `;
 
 const TrackControlsCurrent = styled.div`
-    color: white;
+    color: ${props => props.theme.controls.base};
 	font-style: italic;
 	height: 1.2em;
 	font-size: 0.9em;
@@ -33,7 +33,7 @@ const TrackMediaControls = styled.div`
 `;
 
 const TrackProgress = styled.div`
-	background-color: white;
+	background-color: ${props => props.theme.controls.base};
     height: 0.5em;
     flex-grow: 1;
     margin-left: 0.5em;
@@ -42,7 +42,7 @@ const TrackProgress = styled.div`
 const TrackCurrentProgress = styled.span<{progress: number}>`
 	display: block;
 	transition: 0.5s width;
-	background-color: #b3b3b3;
+	background-color: ${props => props.theme.controls.fill};
 	height: 0.5em;
 	width: ${props => props.progress}%;
 `;

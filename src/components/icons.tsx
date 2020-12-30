@@ -6,7 +6,7 @@ interface ButtonProps {
 }
 
 const SvgButton = styled.svg<ButtonProps>`
-	fill: ${props => props.color || 'white'};
+	fill: ${props => props.theme.controls.base};
     font-size: 1.5em;
 	&:hover {
       fill: #b3b3b3;

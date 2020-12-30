@@ -17,10 +17,10 @@ const TrackListContainer = styled.ol`
 
 const TrackListItem = styled.li<{selected: boolean}>`
 	padding: 0.7em 1em;
-	color: ${props => props.selected ? '#C86ED3' : 'inherit'};
+	color: ${props => props.selected ? props.theme.tracks.active : props.theme.base };
 	&:hover {
 		cursor: pointer;
-      	background-color: #dfe7e9;
+      	background-color: ${props => props.theme.tracks.hover};
 	}
 `;
 
