@@ -39,12 +39,21 @@ const TrackProgress = styled.div`
     margin-left: 0.5em;
 `;
 
-const TrackCurrentProgress = styled.span<{progress: number}>`
+interface TrackCurrentProgressProps {
+	progress: number;
+}
+
+const TrackCurrentProgress = styled.span.attrs<TrackCurrentProgressProps>(props => ({
+	// width: props.progress + "%",
+	// width: "50%",
+	style: {
+		width: props.progress + "%",
+	},
+}))<TrackCurrentProgressProps>`
 	display: block;
 	transition: 0.5s width;
 	background-color: ${props => props.theme.controls.fill};
 	height: 0.5em;
-	width: ${props => props.progress}%;
 `;
 
 function TrackControls(props: TrackControlsProps): JSX.Element {

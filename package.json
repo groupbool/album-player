@@ -1,6 +1,6 @@
 {
 	"name": "album-player",
-	"version": "0.0.4-prealpha",
+	"version": "0.0.5-prealpha",
 	"description": "an audio tracks player react component using the HTML 5 audio api",
 	"keywords": [
 		"html5-audio-player",
