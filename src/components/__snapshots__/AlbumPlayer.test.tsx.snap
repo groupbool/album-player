@@ -126,7 +126,12 @@ exports[`rendering AlbumPlayer renders album player as expected 1`] = `
                                 progress={0}
                               >
                                 <span
-                                  className="sc-iqHYGH zuiwp"
+                                  className="sc-iqHYGH jKZUgz"
+                                  style={
+                                    Object {
+                                      "width": "0%",
+                                    }
+                                  }
                                 />
                               </styled.span>
                             </div>
