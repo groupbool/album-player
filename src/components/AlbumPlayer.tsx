@@ -68,6 +68,7 @@ export default class AlbumPlayer extends React.PureComponent<AlbumPlayerProps, A
 		this.handleControl = this.handleControl.bind(this);
 		this.handleTrackEnd = this.handleTrackEnd.bind(this);
 		this.handleTrackSelect = this.handleTrackSelect.bind(this);
+		this.handleShortcuts = this.handleShortcuts.bind(this);
 	}
 
 	componentDidMount(): void {
@@ -75,10 +76,22 @@ export default class AlbumPlayer extends React.PureComponent<AlbumPlayerProps, A
 			onProgress: progress => this.setState({ progress }),
 			onTrackEnd: this.handleTrackEnd,
 		});
+		document.addEventListener('keyup', e => this.handleShortcuts(e.key));
 	}
 
 	componentWillUnmount(): void {
 		this.player.destroy();
+		document.removeEventListener('keyup', e => this.handleShortcuts(e.key));
+	}
+
+	/**
+	 * Handles actions corresponding to keyboard shortcuts.
+	 */
+	private handleShortcuts(key: string): void {
+		if (key === ' ') {
+			const track = this.track();
+			this.handleControl(track.url);
+		}
 	}
 
 	handleTrackEnd(): void {
