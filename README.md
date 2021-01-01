@@ -3,7 +3,7 @@
 ![album-player tests](https://github.com/groupbool/album-player/workflows/album-player%20tests/badge.svg?branch=main) 
 [![npm version](https://badge.fury.io/js/album-player.svg)](https://badge.fury.io/js/album-player)
 
-![album-player](screenshots/jaded_at_twenty_two.jpeg)
+<img src="screenshots/jaded_at_twenty_two.jpeg" width="300"/>
 
 album-player is a simple react component that allows you to display and play tracks from an album 
 using the html5 audio api. It takes in an album struct where the tracks are specifed as publicly
